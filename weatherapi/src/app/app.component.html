@@ -1,0 +1,25 @@
+<h1>Weather App</h1>
+
+<form [formGroup]="form" (ngSubmit)="getWeather()">
+
+  <table>
+    <tr>
+      <td>Name of City:</td>
+      <td>
+        <input type="text" size="30" formControlName="city">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit" [disabled]="form.invalid">
+          Show Weather</button>
+      </td>
+    </tr>
+  </table>
+
+</form>
+
+<div *ngIf="!!city">
+<app-display-weather></app-display-weather>
+</div>
+

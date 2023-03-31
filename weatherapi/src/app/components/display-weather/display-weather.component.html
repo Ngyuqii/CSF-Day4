@@ -1,0 +1,11 @@
+<h3>Current Weather</h3>
+<table>
+    <tr *ngFor="let w of weather">
+    <td>
+        <img src="https://openweathermap.org/img/wn/{{ w.icon }}@2x.png" alt="Weather Image">
+    </td>
+    <td>
+        {{ w.main }} - {{ w.description }}
+    </td>
+    </tr>
+</table>
