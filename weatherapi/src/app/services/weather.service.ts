@@ -13,7 +13,7 @@ export class WeatherService {
 
   onWeather = new Subject<Weather[]>;
 
-  //Method to make an HTTP GET request to the OpenWeatherMap API
+  //Method to make a HTTP GET request to the OpenWeatherMap API
   //Returns an Observable of an array of Weather object
   //https://api.openweathermap.org/data/2.5/weather?q=singapore&units=metric&appid={API_Key}
   getWeatherURL(city: string): Observable<Weather[]> {

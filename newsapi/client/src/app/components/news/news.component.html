@@ -1,0 +1,41 @@
+<h3>What would you like to read today?</h3>
+
+<form [formGroup]="form" (ngSubmit)="showSearch()">
+	<table>
+		<tr>
+			<td> Country: </td>
+			<td>
+				<select formControlName="code" style="width: 150px;"
+				(change)="onCountryChange($event)">
+					<option *ngFor="let c of countries" [value]="c.code">
+						{{ c.name | titlecase }}
+					</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Category:</td>
+			<td>
+				<select formControlName="category" style="width: 150px;">
+					<option *ngFor="let c of categories" [value]="c">
+					{{ c | titlecase }}
+					</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Result Size:</td>
+			<td>
+				<input type="number" min="1" formControlName="pageSize" style="width: 145px;">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<button type="submit" [disabled]="form.invalid">
+					Search {{comment}}
+				</button>
+			</td>
+		</tr>
+	</table>
+</form>

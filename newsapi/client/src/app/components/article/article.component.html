@@ -1,0 +1,15 @@
+<h3 *ngIf="articles$ | async; else noNews">News Articles</h3>
+
+<div *ngFor="let a of articles$ | async" class="article">
+  <h2>
+    {{ a.title }}
+  </h2>
+  <p>{{ a.author }}</p>
+  <p><a [href]="a.url" target="_blank">Click here to read article</a></p>
+</div>
+
+<ng-template #noNews>
+  <p>“News is something somebody doesn't want printed; all else is advertising.” <br>
+    - William Randolph Hearst
+  </p>
+</ng-template>
